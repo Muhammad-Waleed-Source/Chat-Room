@@ -1,0 +1,34 @@
+[
+  {
+    "username": "Waleed",
+    "password": "$2a$10$syYuWTp4GcB3q7QBT3OmYOpPkmbYfgv2/JRxpIqd9x6NU/3yXzQX2",
+    "fullName": "Muhmmad Waleed",
+    "email": "waleed@example.com",
+    "avatar": "http://localhost:3000/uploads/1765128458007.jpg",
+    "id": "1765128458193"
+  },
+  {
+    "username": "Kamran",
+    "password": "$2a$10$awBaJrM01WckYdR27rStTuw1SmbwPZ0IB450OdSY0I84SL00sqqeC",
+    "fullName": "Muhammad Kamran",
+    "email": "kamran@example.com",
+    "avatar": "http://localhost:3000/uploads/1765128491037.jpg",
+    "id": "1765128491159"
+  },
+  {
+    "username": "Sabir",
+    "password": "$2a$10$b8QXLlT7OR1qtIGwav12a.Su61hiZZ1G3PsoK0mT03P/E2EZYycBm",
+    "fullName": "Sabir Sultan",
+    "email": "sabir@example.com",
+    "avatar": "http://localhost:3000/uploads/1765128525828.jpg",
+    "id": "1765128525951"
+  },
+  {
+    "username": "Faisal",
+    "password": "$2a$10$s69jdMOkuusavGXOSVhZoORARwModk3XueGaaizBUFlbQskly3vtq",
+    "fullName": "Faisal Fayaz",
+    "email": "faisal@example.com",
+    "avatar": "http://localhost:3000/uploads/1765195133434.jpg",
+    "id": "1765195133545"
+  }
+]
