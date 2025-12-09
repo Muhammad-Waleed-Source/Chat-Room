@@ -22,13 +22,5 @@
     "email": "sabir@example.com",
     "avatar": "http://localhost:3000/uploads/1765128525828.jpg",
     "id": "1765128525951"
-  },
-  {
-    "username": "Faisal",
-    "password": "$2a$10$s69jdMOkuusavGXOSVhZoORARwModk3XueGaaizBUFlbQskly3vtq",
-    "fullName": "Faisal Fayaz",
-    "email": "faisal@example.com",
-    "avatar": "http://localhost:3000/uploads/1765195133434.jpg",
-    "id": "1765195133545"
   }
 ]
