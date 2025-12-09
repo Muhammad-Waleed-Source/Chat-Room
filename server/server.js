@@ -68,24 +68,11 @@ app.post("/api/login", async (req, res) => {
 });
 
 // Socket.io Logic
-let onlineUsers = []; // { socketId, username }
+let onlineUsers = [];
 
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  // socket.on("join", (username) => {
-  //   const user = userManager.getUser(username);
-  //   onlineUsers.push({
-  //     socketId: socket.id,
-  //     username,
-  //     avatar: user ? user.avatar : null,
-  //   });
-  //   io.emit("onlineUsers", onlineUsers);
-  //   socket.broadcast.emit("message", {
-  //     user: "System",
-  //     text: `${username} has joined the chat`,
-  //   });
-  // });
   socket.on("join", (username) => {
     const user = userManager.getUser(username);
     onlineUsers.push({
@@ -101,7 +88,6 @@ io.on("connection", (socket) => {
   });
 
   socket.on("sendMessage", (data) => {
-    // data: { user, text }
     io.emit("message", data);
   });
 

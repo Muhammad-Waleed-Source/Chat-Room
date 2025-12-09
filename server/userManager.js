@@ -49,7 +49,6 @@ class UserManager {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    // const finalAvatar = avatarPath || "https://ui-avatars.com/api/?background=random&name=" + encodeURIComponent(username);
     const finalAvatar =
       avatarPath ||
       "https://ui-avatars.com/api/?background=random&name=" +
@@ -78,19 +77,6 @@ class UserManager {
     };
   }
 
-  // async login(username, password) {
-  //   const user = this.users.find((u) => u.username === username);
-  //   if (!user) {
-  //     return { success: false, message: "User not found" };
-  //   }
-
-  //   const isMatch = await bcrypt.compare(password, user.password);
-  //   if (!isMatch) {
-  //     return { success: false, message: "Invalid credentials" };
-  //   }
-
-  //   return { success: true, user: { username: user.username, id: user.id } };
-  // }
   async login(username, password) {
     const user = this.users.find((u) => u.username === username);
     if (!user) {
@@ -107,7 +93,7 @@ class UserManager {
       user: {
         username: user.username,
         id: user.id,
-        avatar: user.avatar, // <-- add this
+        avatar: user.avatar,
         fullName: user.fullName,
         email: user.email,
       },

@@ -10,7 +10,7 @@ function Chat({ user, onLogout }) {
 
   useEffect(() => {
     const newSocket = io('/', {
-      transports: ['websocket'], // Force websocket
+      transports: ['websocket'],
     });
 
     setSocket(newSocket);
