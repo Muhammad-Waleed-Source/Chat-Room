@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { generateKeys } from '../utils/crypto';
 
 function Auth({ onLogin }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -22,16 +23,47 @@ function Auth({ onLogin }) {
     }
   };
 
+
+
+  const validateInput = () => {
+     if (!isLogin) {
+        // Full Name Validation
+        const nameRegex = /^[A-Za-z ]+$/;
+        if (!nameRegex.test(fullName)) {
+             setError("Full name can only contain alphabets and spaces");
+             return false;
+        }
+        if (fullName.length < 3 || fullName.length > 40) {
+             setError("Full name must be between 3 and 40 characters");
+             return false;
+        }
+
+        // Username Validation
+        const usernameRegex = /^[a-zA-Z]+$/;
+        if (!usernameRegex.test(username)) {
+             setError("Username must contain only alphabets");
+             return false;
+        }
+        // Strict Lowercase Check
+        if (username !== username.toLowerCase()) {
+             setError("Username must be all lowercase");
+             return false;
+        }
+        
+        if (password.length < 8) {
+             setError("Password must be at least 8 characters long");
+             return false;
+        }
+     }
+     return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    if (!isLogin) {
-      if (password.length < 8) {
-        setError('Password must be at least 8 characters long');
-        return;
-      }
-    }
+    if (!validateInput()) return;
+    // previous logic...
 
     const endpoint = isLogin ? '/api/login' : '/api/register';
     
@@ -51,6 +83,17 @@ function Auth({ onLogin }) {
         formData.append('avatar', avatarFile);
       }
       body = formData;
+      
+      // Generate RSA Keys
+      const crypt = generateKeys();
+      const privateKey = crypt.getPrivateKey();
+      const publicKey = crypt.getPublicKey();
+      
+      // Store private key locally
+      localStorage.setItem('privateKey', privateKey);
+      
+      // process.env or just standard? JSEncrypt keys are PEM strings.
+      formData.append('publicKey', publicKey);
     }
     
     try {
@@ -103,10 +146,11 @@ function Auth({ onLogin }) {
           <>
             <input
               type="text"
-              placeholder="Full Name"
+              placeholder="Full Name (Min 3 chars, Alphabets Only)"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
+              className={fullName && (!/^[A-Za-z ]+$/.test(fullName) || fullName.length < 3 || fullName.length > 40) ? 'input-error' : ''}
             />
             <input
               type="email"
@@ -119,10 +163,11 @@ function Auth({ onLogin }) {
         )}
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Username (Lowercase Alphabets Only)"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          className={!isLogin && username && (!/^[a-zA-Z]+$/.test(username) || username !== username.toLowerCase()) ? 'input-error' : ''}
         />
         <input
           type="password"

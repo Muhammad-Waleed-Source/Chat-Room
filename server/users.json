@@ -1,26 +1,29 @@
 [
   {
-    "username": "Waleed",
-    "password": "$2a$10$syYuWTp4GcB3q7QBT3OmYOpPkmbYfgv2/JRxpIqd9x6NU/3yXzQX2",
-    "fullName": "Muhmmad Waleed",
+    "username": "waleed",
+    "password": "$2a$10$w0lACUUa9OoIW96q.XhfhOU4VLEZW.lJ2.EQrBDcLj6IoEbCCgB.W",
+    "fullName": "Muhammad Waleed",
     "email": "waleed@example.com",
-    "avatar": "http://localhost:3000/uploads/1765128458007.jpg",
-    "id": "1765128458193"
+    "avatar": "http://localhost:3000/uploads/1765387932914.jpg",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6Yanu5nRwHKeljOZIEUhimsiB\r\nAquxr/304y9nHdMRLZd+G1DymD4iImN+w0rPL7iSCdtO6XUTGSFL+5R6gnTH1ips\r\nPFDuWTqQbtufLYOabtBiSjsu+oE+pdY/FJS45WYKm7IWSzSF/NDXLlCQ1LUCvqS5\r\nt4N/y0feXff3KourwQIDAQAB\r\n-----END PUBLIC KEY-----",
+    "id": "1765387933062"
   },
   {
-    "username": "Kamran",
-    "password": "$2a$10$awBaJrM01WckYdR27rStTuw1SmbwPZ0IB450OdSY0I84SL00sqqeC",
+    "username": "kamran",
+    "password": "$2a$10$SQHTf6Q2oWLLI09To4OjGeKRiek2mEVugQ2lcX0SQdB1n2ayh9HQO",
     "fullName": "Muhammad Kamran",
     "email": "kamran@example.com",
-    "avatar": "http://localhost:3000/uploads/1765128491037.jpg",
-    "id": "1765128491159"
+    "avatar": "http://localhost:3000/uploads/1765387970429.jpg",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCy5gjV5reLTbt91wuKORZNLgt6\r\n0TzPtacMh/P9EiBwa4r+VbUcJ9Iqozn4bdXe5Q0pAWd+yxyy6mpIoDDmR9FMSv/T\r\nRAOUzBW7vXosGF739f1LB7SMH39VzfMbtJyGHOCSAMlr5W7Gu04ZK1hX485ZD8Dq\r\nlDjK8NTt0eaMljY45QIDAQAB\r\n-----END PUBLIC KEY-----",
+    "id": "1765387970539"
   },
   {
-    "username": "Sabir",
-    "password": "$2a$10$b8QXLlT7OR1qtIGwav12a.Su61hiZZ1G3PsoK0mT03P/E2EZYycBm",
+    "username": "sabir",
+    "password": "$2a$10$ZhJrcI9VQdGK1ZW/X5SnQuVMWQrLIdOxuWBv7ClrgTRjxq6lmE2/u",
     "fullName": "Sabir Sultan",
     "email": "sabir@example.com",
-    "avatar": "http://localhost:3000/uploads/1765128525828.jpg",
-    "id": "1765128525951"
+    "avatar": "http://localhost:3000/uploads/1765387995809.jpg",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\r\nMIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgFpyjGmZ56iOmXMaB1RG7hNnI9X3\r\nZhsCF+LkcpblUv70K/FqdjG0i4dSVz4ZNZ46n+ijT/aju7GWF5bf7N3/J8CREy1c\r\nffSzWQKsfGcgMI9xZwcItgWNUJMfN4HC/ODP7A2TtoE6x4mOu/jAMw+gDI/soiN2\r\noIPAR9fE33mc/zZbAgMBAAE=\r\n-----END PUBLIC KEY-----",
+    "id": "1765387995924"
   }
 ]

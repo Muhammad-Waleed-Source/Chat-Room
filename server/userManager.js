@@ -34,7 +34,36 @@ class UserManager {
     return this.users.find((u) => u.username === username);
   }
 
-  async register(username, password, fullName, email, avatarPath) {
+  async register(username, password, fullName, email, avatarPath, publicKey) {
+    // Validation Rules
+    const nameRegex = /^[A-Za-z ]+$/;
+    const usernameRegex = /^[a-zA-Z]+$/;
+
+    if (!usernameRegex.test(username)) {
+      return { success: false, message: "Username must contain only alphabets" };
+    }
+    if (username !== username.toLowerCase()) {
+       return { success: false, message: "Username must be all lowercase" }; 
+       // Although "Only alphabets" regex allows Caps, user said "All lowercase".
+       // Actually typical regex for "All lowercase alphabets" is /^[a-z]+$/
+       // But request said: Regex: /^[a-zA-Z]+$/ AND "All lowercase".
+       // I will enforce lowercase explicitly or check it.
+       // Let's just strict check: if (/[A-Z]/.test(username)) ...
+    }
+    
+    // Correction: User gave explicit regex /^[a-zA-Z]+$/ but also rule "All lowercase".
+    // I should probably just enforce /^[a-z]+$/ if I want to be strict, OR check if input matches that.
+    // Let's stick to the User's Requirements strictly:
+    // Regex: /^[a-zA-Z]+$/
+    // Rule: "All lowercase".
+    
+    if (!nameRegex.test(fullName)) {
+      return { success: false, message: "Full name can only contain alphabets and spaces" };
+    }
+    if (fullName.length < 3 || fullName.length > 40) {
+      return { success: false, message: "Full name must be between 3 and 40 characters" };
+    }
+
     if (this.users.find((u) => u.username === username)) {
       return { success: false, message: "Username already exists" };
     }
@@ -60,6 +89,7 @@ class UserManager {
       fullName,
       email,
       avatar: finalAvatar,
+      publicKey,
       id: Date.now().toString(),
     };
 
@@ -73,6 +103,7 @@ class UserManager {
         avatar: newUser.avatar,
         fullName: newUser.fullName,
         email: newUser.email,
+        publicKey: newUser.publicKey,
       },
     };
   }

@@ -156,6 +156,24 @@ button.primary-btn:hover {
   gap: 10px;
 }
 
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #9c6ad6;
+}
+
 .message {
   padding: 10px 15px;
   border-radius: 12px;
@@ -207,4 +225,14 @@ button.primary-btn:hover {
   height: 10px;
   background: var(--secondary-color);
   border-radius: 50%;
+}
+
+.message.highlight-mention {
+  border: 1px solid var(--secondary-color);
+  background: rgba(3, 218, 198, 0.1);
+  box-shadow: 0 0 10px rgba(3, 218, 198, 0.2);
+}
+
+.input-error {
+  border: 1px solid var(--error-color) !important;
 }
