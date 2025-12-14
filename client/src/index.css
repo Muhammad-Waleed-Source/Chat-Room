@@ -231,6 +231,7 @@ button.primary-btn:hover {
   border: 1px solid var(--secondary-color);
   background: rgba(3, 218, 198, 0.1);
   box-shadow: 0 0 10px rgba(3, 218, 198, 0.2);
+  color: white;
 }
 
 .input-error {

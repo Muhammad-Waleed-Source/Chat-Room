@@ -58,7 +58,7 @@ function Chat({ user, onLogout }) {
 
     // Handle private mentioned messages
     newSocket.on('mentionedMessage', (data) => {
-       const privateKey = localStorage.getItem('privateKey');
+       const privateKey = localStorage.getItem('privateKey_' + user.username);
        let decrypted = "Failed to decrypt";
        if (privateKey) {
          const res = decryptMessage(data.decryptableText, privateKey);

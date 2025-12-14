@@ -90,7 +90,7 @@ function Auth({ onLogin }) {
       const publicKey = crypt.getPublicKey();
       
       // Store private key locally
-      localStorage.setItem('privateKey', privateKey);
+      localStorage.setItem('privateKey_' + username, privateKey);
       
       // process.env or just standard? JSEncrypt keys are PEM strings.
       formData.append('publicKey', publicKey);
